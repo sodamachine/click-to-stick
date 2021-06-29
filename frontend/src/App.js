@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './NavBar'
+import NotesContainer from './NotesContainer'
 
 export default function App(){
   return (
-    <NavBar />
+    <>
+      <NavBar />
+      <NotesContainer />
+    </>
   )
 } 
 
