@@ -3,6 +3,7 @@ class CreateNotes < ActiveRecord::Migration[6.1]
     create_table :notes do |t|
       t.string :title
       t.string :content
+      t.string :status
       t.integer :positionX
       t.integer :positionY
 

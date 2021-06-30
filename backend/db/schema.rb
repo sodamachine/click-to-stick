@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2021_06_29_180939) do
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.string "status"
     t.integer "positionX"
     t.integer "positionY"
     t.datetime "created_at", precision: 6, null: false
