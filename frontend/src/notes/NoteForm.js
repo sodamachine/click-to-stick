@@ -25,7 +25,6 @@ class NoteForm extends React.Component {
             positionX: 100,
             positionY: 0
         }
-        debugger
         this.props.addNote(note)
         this.props.history.push("/notes")
     }
@@ -49,4 +48,4 @@ class NoteForm extends React.Component {
     }
 }
 
-export default withRouter(connect(null, {addList})(NoteForm))
+export default withRouter(connect(null, {addNote})(NoteForm))
