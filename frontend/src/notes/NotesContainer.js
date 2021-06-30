@@ -1,8 +1,15 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import NoteForm from './NoteForm'
+import Notes from './Notes'
+import {connect} from 'react-redux'
+import fetchNotes from '../actions/fetchNotes'
 
 class NotesContainer extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchNotes()
+    }
 
     render() {
         return (
@@ -21,4 +28,4 @@ class NotesContainer extends React.Component {
 
 }
 
-export default NotesContainer
+export default connect(null, {fetchNotes})(NotesContainer)
