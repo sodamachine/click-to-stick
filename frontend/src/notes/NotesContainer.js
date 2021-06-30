@@ -7,15 +7,16 @@ import fetchNotes from '../actions/fetchNotes'
 class NotesContainer extends React.Component {
 
     componentDidMount() {
-        debugger
         this.props.fetchNotes()
     }
 
     render() {
-        debugger
         return (
             <>
                 <Switch>
+                    <Route path="/notes/new">
+                        <NoteForm />
+                    </Route>
                     <Route path="/notes">
                         <Notes />
                     </Route>

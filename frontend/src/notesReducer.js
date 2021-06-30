@@ -1,4 +1,3 @@
-debugger
 export default function notesReducer(state = {notes: []}, action) {
     switch (action.type) {
         case "FETCH_NOTES":

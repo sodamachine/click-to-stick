@@ -4,13 +4,16 @@ import Note from './Note'
 
 class Notes extends Component {
 
-    debugger
+    constructor(){
+        super()
+    }
+
     render() {
         return (
             <>
                 <ul>
                     {/* {this.props.notes && this.props.notes.map((note, i) => <li key={note.id}>{note.title}</li> )} */}
-                    {this.props.notes.map((note, i) => <Note key={i} note={note}/> )}
+                    {this.props.notes.map((note, i) => <Note key={i} note={note} /> )}
                 </ul>
             </>
         )

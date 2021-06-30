@@ -5,7 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-Note.create(title: "titleTesting1", content: "contentTesting1")
-Note.create(title: "titleTesting2", content: "contentTesting2")
-Note.create(title: "titleTesting3", content: "contentTesting3")
