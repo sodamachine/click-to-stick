@@ -11,6 +11,9 @@ class NotesContainer extends React.Component {
                     <Route path="/notes/new">
                         <NoteForm />
                     </Route>
+                    <Route path="/notes">
+                        <Notes />
+                    </Route>
                 </Switch>
             </>
         )
