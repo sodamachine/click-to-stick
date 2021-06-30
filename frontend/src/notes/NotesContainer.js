@@ -1,14 +1,8 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
-import {connect} from 'react-redux'
-import Notes from './Notes'
-import fetchNotes from '../actions/fetchNotes'
+import NoteForm from './NoteForm'
 
 class NotesContainer extends React.Component {
-
-    componentDidMount() {
-        this.props.fetchNotes()
-    }
 
     render() {
         return (
@@ -17,9 +11,6 @@ class NotesContainer extends React.Component {
                     <Route path="/notes/new">
                         <NoteForm />
                     </Route>
-                    <Route path="/notes">
-                        <Notes />
-                    </Route>
                 </Switch>
             </>
         )
@@ -27,4 +18,4 @@ class NotesContainer extends React.Component {
 
 }
 
-export default connect(null, {fetchNotes})(NotesContainer)
+export default NotesContainer
