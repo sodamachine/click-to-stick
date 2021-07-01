@@ -9,10 +9,10 @@ class NoteForm extends React.Component {
         super(props)
         this.state = {
             title: "", 
-            // content: "", 
-            // status: "live",
-            // positionX: 100,
-            // positionY: 0
+            content: "",
+            status: "live",
+            positionX: 100,
+            positionY: 0
         }
     }
 
@@ -21,8 +21,9 @@ class NoteForm extends React.Component {
         const note = {
             title: this.state.title,
             content: this.state.content,
-            status: "live",
-            position: "x: 100, y: 0"
+            status: this.state.status,
+            positionX: this.state.positionX,
+            positionY: this.state.positionY
         }
         this.props.addNote(note)
         this.props.history.push("/notes")

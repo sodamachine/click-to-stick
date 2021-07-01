@@ -12,7 +12,10 @@ import Draggable from "react-draggable";
 
 export default function Note(props) {
     return (
-        <Draggable>
+        <Draggable
+            key={props.note.id}
+            defaultPosition={{x: props.note.positionX, y: props.note.positionY}}
+            >
             <div className="box">
                 {props.note.title}
             </div>
