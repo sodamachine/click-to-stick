@@ -17,7 +17,8 @@ export default function Note(props) {
             defaultPosition={{x: props.note.positionX, y: props.note.positionY}}
             >
             <div className="box">
-                {props.note.title}
+                <h4>{props.note.title}</h4>
+                <p>{props.note.content}</p>
             </div>
         </Draggable>
     )
