@@ -4,14 +4,22 @@ import Note from './Note'
 
 class Notes extends Component {
 
-    updateNote(data, key) {
-        debugger
+    constructor(props) {
+        super(props)
+        this.updateState = this.updateState.bind(this)
+    }
+
+    updateState(data, index) {
+        let newNotes = this.props.notes
+        newNotes[index].positionX = data.x
+        newNotes[index].positionY = data.y
+        this.setState({newNotes})
     }
 
     render() {
         return (
             <div>
-                {this.props.notes && this.props.notes.map((note) => <Note key={note.id} note={note} />)}
+                {this.props.notes && this.props.notes.map((note, i) => <Note index={i} note={note} sendData={this.updateState}/>)}
             </div>
         )
     }

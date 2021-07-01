@@ -7,17 +7,16 @@ function Note(props) {
 
     const handleDelete = () => {
         props.deleteNote(props.note.id)
-
+        
     }
 
     return (
         <Draggable
-            key={props.note.id}
+            key={props.index}
             defaultPosition={{x: props.note.positionX, y: props.note.positionY}}
-            // onStop={(e, data) => {
-            //     debugger
-            //     props.sendData(data, props.note.id)
-            // }}
+            onStop={(e, data) => {
+                props.sendData(data, props.index)
+            }}
             >
             <div className="box">
                 <h4>{props.note.title}</h4>

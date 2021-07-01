@@ -11,8 +11,8 @@ class NoteForm extends React.Component {
             title: "", 
             content: "",
             status: "live",
-            positionX: 100,
-            positionY: 0
+            positionX: 500,
+            positionY: 500
         }
     }
 
