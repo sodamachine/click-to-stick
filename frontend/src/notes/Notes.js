@@ -4,6 +4,10 @@ import Note from './Note'
 
 class Notes extends Component {
 
+    updateNote(data, key) {
+        debugger
+    }
+
     render() {
         return (
             <div>
@@ -11,7 +15,6 @@ class Notes extends Component {
             </div>
         )
     }
-               /* {this.props.notes && this.props.notes.map((note, i) => <li key={note.id}>{note.title}</li> )} */
 }
 
 function mapStateToProps(state) {
