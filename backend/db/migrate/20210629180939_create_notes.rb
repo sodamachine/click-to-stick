@@ -4,8 +4,7 @@ class CreateNotes < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :content
       t.string :status
-      t.integer :positionX
-      t.integer :positionY
+      t.string :position
 
       t.timestamps
     end

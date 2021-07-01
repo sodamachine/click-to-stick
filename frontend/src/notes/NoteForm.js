@@ -22,8 +22,7 @@ class NoteForm extends React.Component {
             title: this.state.title,
             content: this.state.content,
             status: "live",
-            positionX: 100,
-            positionY: 0
+            position: "x: 100, y: 0"
         }
         this.props.addNote(note)
         this.props.history.push("/notes")
