@@ -2,17 +2,15 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import addNote from '../actions/addNote'
-import editNote from '../actions/editNote'
 
 class NoteForm extends React.Component {
-    debugger
 
     constructor(props) {
         super(props)
         this.state = {
             title: "", 
             content: "",
-            status: "live",
+            status: "active",
             positionX: 500,
             positionY: 500
         }
@@ -20,19 +18,15 @@ class NoteForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        if (this.props.note) {
-            this.props.editNote(this.state)
-        } else {
-            const note = {
-                title: this.state.title,
-                content: this.state.content,
-                status: this.state.status,
-                positionX: this.state.positionX,
-                positionY: this.state.positionY
-            }
-            this.props.addNote(note)
-            this.props.history.push("/notes")
+        const note = {
+            title: this.state.title,
+            content: this.state.content,
+            status: this.state.status,
+            positionX: this.state.positionX,
+            positionY: this.state.positionY
         }
+        this.props.addNote(note)
+        this.props.history.push("/notes")
     }
 
     handleChange(e) {
@@ -54,4 +48,4 @@ class NoteForm extends React.Component {
     }
 }
 
-export default withRouter(connect(null, {addNote, editNote})(NoteForm))
+export default withRouter(connect(null, {addNote})(NoteForm))
