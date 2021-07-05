@@ -2,6 +2,7 @@ import './Notes.css';
 import Draggable from "react-draggable";
 import {connect} from 'react-redux'
 import deleteNote from '../actions/deleteNote'
+import {Link} from 'react-router-dom'
 
 function Note(props) {
 
@@ -12,14 +13,14 @@ function Note(props) {
 
     return (
         <Draggable
-            key={props.index}
+            key={props.i}
             defaultPosition={{x: props.note.positionX, y: props.note.positionY}}
             onStop={(e, data) => {
-                props.sendData(data, props.index)
+                props.sendData(data, props.i)
             }}
             >
             <div className="box">
-                <h4>{props.note.title}</h4>
+                <h4><Link to={`/notes/${props.i}`}>{props.note.title}</Link></h4>
                 <p>{props.note.content}</p>
                 <button onClick={handleDelete}>x</button>
             </div>

@@ -21,6 +21,9 @@ class NotesContainer extends React.Component {
                     <Route path="/notes">
                         <Notes />
                     </Route>
+                    <Route path="/notes/:id" render={(routerProps) =>
+                        <Note note={this.state.lists.find(note => note.id === parseInt(routerProps.match.params.id))} />
+                    }/>
                 </Switch>
             </>
         )

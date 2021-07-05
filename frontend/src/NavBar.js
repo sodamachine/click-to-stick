@@ -5,7 +5,6 @@ export default function NavBar(props) {
     <>
         <Link to="/notes">All Notes</Link>
         <Link to="/notes/new">New Note</Link>
-        <Link to="/notes/new">Trash</Link>
     </>
     )
 }

@@ -9,17 +9,17 @@ class Notes extends Component {
         this.updateState = this.updateState.bind(this)
     }
 
-    updateState(data, index) {
+    updateState(data, i) {
         let newNotes = this.props.notes
-        newNotes[index].positionX = data.x
-        newNotes[index].positionY = data.y
+        newNotes[i].positionX = data.x
+        newNotes[i].positionY = data.y
         this.setState({newNotes})
     }
 
     render() {
         return (
             <div>
-                {this.props.notes && this.props.notes.map((note, i) => <Note index={i} note={note} sendData={this.updateState}/>)}
+                {this.props.notes && this.props.notes.map((note, i) => <Note key={i} note={note} sendData={this.updateState}/>)}
             </div>
         )
     }
