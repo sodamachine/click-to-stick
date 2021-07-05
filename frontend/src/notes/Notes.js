@@ -9,10 +9,13 @@ class Notes extends Component {
         this.updateState = this.updateState.bind(this)
     }
 
-    updateState(data, i) {
+    updateState(data="delete", id) {
         let newNotes = this.props.notes
-        newNotes[i].positionX = data.x
-        newNotes[i].positionY = data.y
+        if (data == "delete") {
+            newNotes[id-1].status = "deleted"
+        }
+        newNotes[id-1].positionX = data.x
+        newNotes[id-1].positionY = data.y
         this.setState({newNotes})
     }
 

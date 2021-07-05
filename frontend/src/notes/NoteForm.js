@@ -5,6 +5,7 @@ import addNote from '../actions/addNote'
 import editNote from '../actions/editNote'
 
 class NoteForm extends React.Component {
+    debugger
 
     constructor(props) {
         super(props)
