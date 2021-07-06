@@ -4,10 +4,9 @@ export default function notesReducer(state = {notes: []}, action) {
             return {notes: [...state.notes, action.payload]}
         case "FETCH_NOTES":
             return {notes: action.payload}
-        case "DELETE_NOTE":
-            return {notes: state.notes.filter(note => note.id !== action.payload)}
-        case "EDIT_NOTE":
-            return state
+        case "UPDATE_NOTE":
+            const editedNotesArray = state.notes.map(note => note.id === action.payload.id ? action.payload : note)
+            return {notes: editedNotesArray}
         default:
             return state
     }

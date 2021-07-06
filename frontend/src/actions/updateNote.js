@@ -1,10 +1,10 @@
-export default function editNote(note) {
+export default function updateNote(note) {
     return function(dispatch) {
-            fetch(`http://localhost:3001/notes/${note.id}`, {
+            fetch(`http://localhost:3333/notes/${note.id}`, {
                 method: "PATCH",
                 headers: {Accept: "application/json", "Content-Type": "application/json"},
                 body: JSON.stringify({note: note})
         }).then(response => response.json())
-        .then(note => dispatch({type: "EDIT_NOTE", payload: note}))
+        .then(note => dispatch({type: "UPDATE_NOTE", payload: note}))
     }
 }

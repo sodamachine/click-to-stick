@@ -1,37 +1,41 @@
-import React, {Component, Fragment} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import Note from './Note'
-import deleteNote from '../actions/deleteNote'
+import updateNote from '../actions/updateNote.js'
 
 
-class Notes extends Component {
+class Notes extends React.Component {
 
     constructor(props) {
         super(props)
-        this.updateState = this.updateState.bind(this)
+        // this.props.updateNote.bind(this)
     }
 
-    updateState(data="delete", i, id) {
-        let newNotes = this.props.notes
-        if (data == "delete") {
-            this.props.deleteNote(id)
-        }
-        newNotes[i].positionX = data.x
-        newNotes[i].positionY = data.y
-        this.setState({newNotes})
-    }
-
+    // updateNote(e, data) {
+    //     this.props.notes.map((note, i) => {
+    //         if (e.target.type == "submit") {
+    //             note.status = "inactive"
+    //             this.props.updateNote(note)
+    //         } else {
+    //             note.positionX = data.x
+    //             note.positionY = data.y
+    //             this.props.updateNote(note)
+    //         }
+    //     })
+    // }
+    
     render() {
         return (
             <div>
-                {this.props.notes && this.props.notes.map((note, i) => <Note key={i} i={i} note={note} sendData={this.updateState}/>)}
+                {this.props.notes && this.props.notes.map((note, i) => <Note key={i} i={i} note={note}/>)}
+                {/* {this.props.notes && this.props.notes.map((note, i) => <Note key={i} i={i} note={note} updateNote={this.updateNote.bind(this)}/>)} */}
             </div>
         )
     }
 }
 
 function mapStateToProps(state) {
-    return {notes: state.notes}
+    return {notes: state.notes.filter(note => note.status === "active")}
 }
 
-export default connect(mapStateToProps, {deleteNote})(Notes)
+export default connect(mapStateToProps, {updateNote})(Notes)

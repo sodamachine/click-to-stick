@@ -2,6 +2,7 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import NoteForm from './NoteForm'
 import Notes from './Notes'
+import DeletedNotes from './DeletedNotes'
 import {connect} from 'react-redux'
 import fetchNotes from '../actions/fetchNotes'
 import Home from '../Home'
@@ -16,6 +17,9 @@ class NotesContainer extends React.Component {
         return (
             <>
                 <Switch>
+                    <Route path="/notes/trash">
+                        <DeletedNotes />
+                    </Route>
                     <Route path="/notes/new">
                         <NoteForm />
                     </Route>
