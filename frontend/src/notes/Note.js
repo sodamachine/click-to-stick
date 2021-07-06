@@ -1,23 +1,21 @@
 import './Notes.css';
 import Draggable from "react-draggable";
-import NoteOnShow from './NoteOnShow'
+import {connect} from 'react-redux'
+import deleteNote from '../actions/deleteNote'
 
-function NoteOnWall(props) {
-
-    changePosition() {
-        
-    }
+function Note(props) {
     
     return (
         <Draggable
             key={props.i}
             defaultPosition={{x: props.note.positionX, y: props.note.positionY}}
             onStop={(e, data) => {
-                props.changePosition(data, props.i, props.note.id)
+                props.sendData(data, props.i, props.note.id)
             }}
             >
             <div className="box">
-                <NoteOnShow note={props.note} />
+                <h4>{props.note.title}</h4>
+                <p>{props.note.content}</p>
                 <button onClick={(e, data) => {
                     props.sendData(data="delete", props.i, props.note.id)
                 }}
@@ -27,4 +25,4 @@ function NoteOnWall(props) {
     )
 }
 
-export default NoteOnWall
+export default connect(null, {deleteNote})(Note)

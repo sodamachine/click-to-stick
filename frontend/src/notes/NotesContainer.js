@@ -2,7 +2,6 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 import NoteForm from './NoteForm'
 import Notes from './Notes'
-import NoteOnShow from './NoteOnShow'
 import {connect} from 'react-redux'
 import fetchNotes from '../actions/fetchNotes'
 import Home from '../Home'
@@ -23,10 +22,6 @@ class NotesContainer extends React.Component {
                     <Route path="/notes">
                         <Notes />
                     </Route>
-                    {/* <Route path="/notes/:id" render={(routerProps) => <NoteOnShow note={this.state.notes.find(note => note.id === parseInt(routerProps.match.params.id))} />}/> */}
-                    <Route path="/notes/:id" render={
-                        (routerProps) => <NoteOnShow {...routerProps}/>}
-                    />
                     <Route path="/">
                         <Home />
                     </Route>
