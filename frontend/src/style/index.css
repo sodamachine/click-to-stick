@@ -1,0 +1,57 @@
+body {
+    background-image: url("https://wallpaperaccess.com/full/666602.jpg");
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.box {
+  background-color: rgb(182, 233, 217);
+  position: absolute;
+  cursor: move;
+  color: black;
+  width: 200px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: auto;
+  user-select: none;
+}
+
+.navbar a {
+  /* float: left; */
+  /* display: block; */
+  color: #00324a;
+  text-align: left;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.form {
+  width: 50%;
+  padding: 20px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 0 8px  #669999; 
+  }
+
+textarea {
+  width: calc(100% - 12px);
+  padding: 5px;
+}
+
+input, select, textarea {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.trash {
+  width: 50%;
+  padding: 20px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 0 8px  #669999; 
+}

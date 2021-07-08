@@ -1,4 +1,3 @@
-import './Notes.css';
 import Draggable from "react-draggable";
 import {connect} from 'react-redux'
 import updateNote from '../actions/updateNote.js'

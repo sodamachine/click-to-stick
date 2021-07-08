@@ -35,15 +35,19 @@ class NoteForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
-                <label>Title:</label>
-                <input type="text" onChange={this.handleChange.bind(this)} value={this.state.title} name="title"/>
-                <br/>
-                <label>Body:</label>
-                <textarea onChange={this.handleChange.bind(this)} value={this.state.content} name="content"/>
-                <br/>
-                <input type="submit"/>
-            </form>
+            <>
+                <div className="form">
+                    <form onSubmit={this.handleSubmit.bind(this)}>
+                        <label>Title:</label>
+                        <input type="text" onChange={this.handleChange.bind(this)} value={this.state.title} name="title"/>
+                        <br/>
+                        <label>Body:</label>
+                        <textarea onChange={this.handleChange.bind(this)} value={this.state.content} name="content"/>
+                        <br/>
+                        <input type="submit"/>
+                    </form>
+                </div>
+            </>
         )
     }
 }
